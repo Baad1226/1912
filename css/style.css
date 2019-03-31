@@ -18,8 +18,6 @@ body
 	margin-right: 5%;
 }
 
-
-
 #wrapper
 {	
 	width: auto;
@@ -67,7 +65,22 @@ header section.header
 
 header section form
 {
-	margin: 10px 0 0 0;
+	margin: -35px 0 0 0;
+}
+
+header section input[type=text]
+{
+	width: 100px;
+	background-color: rgba(255, 255, 255,0.9);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	border-radius: 15px;
+	padding: 10px;       
+}
+
+header section input[type=text]:focus
+{
+	width: 55%;
 }
 
 nav
@@ -111,13 +124,15 @@ nav a
 nav .aktiv a
 {
 	background-color: rgba(255, 255, 255,0.9);	  
-	color: #4E0D66;
+	color: rgba(78, 13, 102,0.9);
+	border-radius: 15px 15px 0px 0px;
 }
 
 nav a:hover
 {
-	background-color: #EA8101;
+	background-color: rgba(234, 129, 1, 0.9);
 	color: #FFFFFF;
+	border-radius: 15px 15px 0px 0px;
 }
 
 footer
@@ -146,6 +161,18 @@ section.post
 	margin-bottom: 0px;
 }
 
+section hr
+{
+	width: 95%;
+	border-top: 2px dotted rgba(78, 13, 102,0.9);
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	padding: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 section.post h2
 {
 	background-color: rgba(78, 13, 102,0.9);
@@ -153,7 +180,7 @@ section.post h2
 	font-weight: bold;
 	text-align: left;
 	height: 40px;
-	margin: 0px 10px 0px 10px;
+	margin: 10px 10px 0px 10px;
 	padding: 15px 0px 0px 15px;
 	border-radius: 15px 15px 15px 15px;
 }
@@ -165,7 +192,19 @@ section.post h3
 	font-weight: bold;
 	text-align: left;
 	height: 40px;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 10px 0px 10px;
+	padding: 15px 0px 0px 15px;
+	border-radius: 15px 15px 15px 15px;
+}
+
+section.post h3.kepfeltolt
+{
+	background-color: rgba(78, 13, 102,0.9);
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: left;
+	height: 40px;
+	margin: 0px;
 	padding: 15px 0px 0px 15px;
 	border-radius: 15px 15px 15px 15px;
 }
@@ -178,6 +217,12 @@ section.post p.entry
 	margin-bottom: 30px;
 	text-align: justify;
 	line-height: 160%;
+}
+
+section.post .kiemelt
+{	
+    font-weight: bold;
+	color: rgba(78, 13, 102,0.9);
 }
 
 section.post p.entry a
@@ -204,124 +249,121 @@ section.post form
 {
 	background-color: rgba(78, 13, 102,0.75);
 	color: #FFFFFF;
+	font-size: bold;
 	margin: 15px 15px 60px 15px;
 	border-radius: 15px;
-	padding: 30px;        
-}
-		
-div.line
-{
-	text-align: left;
-	margin:10px 30px 10px 0px;
-}
-            
-aside
-{
-	clear: left;
-    float: right;
-    width: 210px;
-	margin: auto;
-}
-	
-aside section.block_support
-{
-    padding: 10px 10px 10px 10px;
-    background-color: rgb(255,255,255,0.9);
-    color: #FFFFFF;
-    margin-bottom: 10px;
-    text-align: center;
-}
-	
-aside h2
-{
-	padding: 5px 20px;
-	background-color: rgba(78, 13, 102,0.9);
-	color: #FFFFFF;
-	margin-bottom: 20px;
+	padding: 30px;
 }
 
-aside img
+section.post input[type=text], input[type=password]
 {
-	width: 80px;
-	height: auto;
-	margin: 0px 0px 0px 0px;
-}
-	
-aside a:hover
-{
-	background-color: rgb(255,255,255,0);
-	color: #FFFFFF;
+	width: 400px;
+	background-color: rgba(255, 255, 255,0.9);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	border-radius: 15px;
+	padding: 10px;       
 }
 
-table#kepek
+section.post input[type=text]:focus, input[type=password]:focus
 {
-	border: 0px solid;
-	width: 94%;
-	margin-left:3%; 
-    margin-right:3%;
+	width: 95%;
 }
 
-#kepek img
+section.post textarea
 {
-	width: 100px;
+	width: 400px;
+	height: 200px;
+	background-color: rgba(255, 255, 255,0.9);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	resize: none;
+	border-radius: 15px;
+	padding: 10px;
 }
 
-#kepek_kicsi img
+section.post textarea:focus
 {
-	width: auto;
+	width: 95%;
 }
 
-#kepek hr
+input[type=button], input[type=submit], input[type=reset], input[type=file], .custom-file-upload
 {
-	border-top: 2px dotted rgba(78, 13, 102,0.9);
-	border-bottom: 0px;
-	padding: 2px;
-}
-
-#kepek tr
-{
-	text-align: left;
-}
-
-#kepek td.data_yes
-{
-	border: 1px solid;
-	height: auto;
-	text-align: justify;
-	vertical-align: top;
-}
-
-#kepek td.data_no
-{
-	border: 0px solid;
-	height: auto;
-	text-align: center;
-	vertical-align: center;
-}
-
-#kepek p.center
-{
-	text-align: center;
-}
-
-#kepek p.left
-{
-	text-align: left;
-}
-
-#kepek a:hover
-{
-	text-decoration: none;
-}
-
-input[type=button], input[type=submit], input[type=reset], input[type=file]
-{
-	padding: 0px 10px 0px 10px;
+	padding: 10px;
 	text-decoration: none;
 	margin: 4px 2px;
 	cursor: pointer;
+	background-color: rgba(78, 13, 102, 0.75);
+	color: rgba(255, 255, 255, 0.9);
+	border-radius: 15px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
+input[type="file"]
+{
+    display: none;
+}
+
+section .kepek_megjelenit
+{
+	width: auto;
+	text-align: center;
+}
+
+section p.data_yes
+{
+	width: auto;
+	height: auto;	
+	display: inline-block;
+	border: 1px solid;
+	text-align: justify;
+	padding: 10px;
+}
+
+section p.data_no
+{	
+	width: auto;
+	height: auto;
+	height: auto;
+	display: inline-block;
+	padding: 10px;
+}
+
+section img.klubkartya
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+section img.hirek
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+section img.kepek
+{
+	width: 150px;
+	float: left;
+	border: 1px solid #000000;
+}
+
+section img.kepek_kicsi
+{
+	width: auto;
+	height: auto;
+	float: left;
+}
+
+.videok
+{
+	text-align: center;
+	margin: 15px;
+}
 
 
 @media all and (max-width: 1280px) {
@@ -416,18 +458,21 @@ nav a
     display: block;
 	font-size: 14px;
 	font-weight: bold;
+	border-radius: 0px;
 }
    
 nav .aktiv a
 {
 	background-color: rgba(255, 255, 255,0.9);	  
 	color: #4E0D66;
+	border-radius: 0px;
 }
 
 nav a:hover
 {
 	background-color: #EA8101;
 	color: #FFFFFF;
+	border-radius: 0px;
 }
 
 article
@@ -462,7 +507,7 @@ section.post h3
 	font-weight: bold;
 	text-align: left;
 	height: 40px;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 10px;
 	padding: 15px 0px 0px 15px;
 	border-radius: 15px 15px 15px 15px;
 }
@@ -505,117 +550,67 @@ section.post form
 	border-radius: 15px;
 	padding: 30px;        
 }
-		
-div.line
-{
-	text-align: left;
-	margin:10px 30px 10px 0px;
-}
-            
-aside
-{
-	clear: left;
-    float: right;
-    width: 210px;
-	margin: auto;
-}
-	
-aside section.block_support
-{
-    padding: 10px 10px 10px 10px;
-    background-color: rgb(255,255,255,0.9);
-    color: #FFFFFF;
-    margin-bottom: 10px;
-    text-align: center;
-}
-	
-aside h2
-{
-	padding: 5px 20px;
-	background-color: rgba(78, 13, 102,0.9);
-	color: #FFFFFF;
-	margin-bottom: 20px;
-}
 
-aside img
-{
-	width: 80px;
-	height: auto;
-	margin: 0px 0px 0px 0px;
-}
-	
-aside a:hover
-{
-	background-color: rgb(255,255,255,0);
-	color: #FFFFFF;
-}
-
-table#kepek
-{
-	border: 0px solid;
-	width: 94%;
-	margin-left:3%; 
-    margin-right:3%;
-}
-
-#kepek img
+section.post input[type=text], input[type=password]
 {
 	width: 100px;
+	background-color: rgba(255, 255, 255,0.9);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	border-radius: 15px;
+	padding: 10px;       
 }
 
-#kepek_kicsi img
+section.post input[type=text]:focus, input[type=password]:focus
+{
+	width: 90%;
+}
+
+section.post textarea
+{
+	width: 100px;
+	height: 50px;
+	background-color: rgba(255, 255, 255,0.9);
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+	resize: none;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+section.post textarea:focus
+{
+	width: 90%;
+}
+
+section img.klubkartya
+{
+	width: 200px;
+}
+
+section img.kepek
+{
+	width: 200px;
+	float: left;
+	border: 1px solid #000000;
+}
+
+section img.kepek_kicsi
 {
 	width: auto;
-}
-
-#kepek hr
-{
-	border-top: 2px dotted rgba(78, 13, 102,0.9);
-	border-bottom: 0px;
-	padding: 2px;
-}
-
-#kepek tr
-{
-	text-align: left;
-}
-
-#kepek td.data_yes
-{
-	border: 1px solid;
 	height: auto;
-	text-align: justify;
-	vertical-align: top;
+	float: left;
 }
 
-#kepek td.data_no
+iframe
 {
-	border: 0px solid;
+	width: 150px;
 	height: auto;
-	text-align: center;
-	vertical-align: center;
 }
 
-#kepek p.center
+#player
 {
-	text-align: center;
-}
-
-#kepek p.left
-{
-	text-align: left;
-}
-
-#kepek a:hover
-{
-	text-decoration: none;
-}
-
-input[type=button], input[type=submit], input[type=reset], input[type=file]
-{
-	padding: 0px 10px 0px 10px;
-	text-decoration: none;
-	margin: 4px 2px;
-	cursor: pointer;
+	width: 150px;
+	height: auto;
 }
 }

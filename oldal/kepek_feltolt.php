@@ -1,4 +1,10 @@
 <?php
+
+if(isset($_SESSION["valid"])){
+		$valid = "true";	  
+	} else {
+		$valid = "false";	
+	}
 //**********************************************************************//
 //  $_FILES['filetoupload']  is the value of                            //
 // file field from the form. <input type="file" name="filetoupload">    //
@@ -14,6 +20,7 @@
 ################################################################################
 ##---------------------------2 - A megjelenő cuccok
 ################################################################################
+		
 	//Ha hiányzik a mappa, akkor ezt írja ki
 	if (!is_dir("$upload_dir")) {
 		$error=1;
@@ -81,23 +88,24 @@
 ################################################################################
 ##---------------------------3-2 - A megjelenítő kódolása
 ################################################################################
-  # }else {
+	if ($valid == "true") {
 	   echo 		
-            "<form method=\"post\" enctype=\"multipart/form-data\" action=\"\">"
-			."<h3>Képfeltöltés</h3>"
-			."<p class=\"entry\">Válassza ki a fájlt feltöltésre!<br>"
-            ."Érvényes kiterjesztések:";
+            "\t\t<form method=\"post\" enctype=\"multipart/form-data\" action=\"\">\n"
+			."\t\t\t\t<h3 class=\"kepfeltolt\">Képfeltöltés</h3>\n"
+			."\t\t\t\t<p class=\"entry\">Válassza ki a fájlt feltöltésre!<br>\n"
+            ."\t\t\t\tÉrvényes kiterjesztések:";
 			for($i=0;$i<count($limitedext);$i++){
 			if (($i<>count($limitedext)-1))$commas=", ";else $commas="";
 			list($key,$value)=each($limitedext);
 			$all_ext = $value.$commas;
 		echo $all_ext;}
 		echo "<br>"
-			."Max fájl méret = ". $size_bytes / 1024 / 1024 ."MB</p>"
-            ."<input type=\"file\" name=\"filetoupload\">"
-            ."<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$size_bytes\">"
-            ."<br><input type=\"Reset\" name=\"reset\" value=\"Mégse\"><input type=\"Submit\" name=\"uploadform\" value=\"Feltöltöm\">"
-            ."</form>";
+			."Max fájl méret = ". $size_bytes / 1024 / 1024 ."MB</p>\n"
+            ."\t\t\t\t<label class=\"custom-file-upload\"><input type=\"file\" name=\"filetoupload\">Kép kiválasztása</label><br>\n"
+            ."\t\t\t\t<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$size_bytes\"><br>\n"
+            ."\t\t\t\t<input type=\"Reset\" name=\"reset\" value=\"Mégse\">"
+			."\t\t\t\t<input type=\"Submit\" name=\"uploadform\" value=\"Feltöltöm\">\n"
+            ."\t\t\t</form>\n";
 
-   #}//Vége
+   }//Vége
 ?>

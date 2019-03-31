@@ -4,10 +4,6 @@
 ################################################################################
 
 $upload_dir = "images/";   //az a mappa amibe a feltöltött fájlok vannak
-// 1 sorban hány fájl jelenjen meg?
-$cols = 6;
-// 1 oszlopban hány fájl jelenjen meg?
-$i =1;
 // Kép adatait listázzuk? (yes/no)
 $image_data_list = "no";
 
@@ -19,9 +15,8 @@ $image_data_list = "no";
 	   $error_dir=0;
    }
 if ($error_dir==0) {
-	// A megjelenítő tábla készítése:
-	echo "<table id=\"kepek\">
-			<tr>";
+	// A megjelenítő készítése:
+		echo "\t\t<div class=\"kepek_megjelenit\">";
 
 	//megnyitjuk a feltöltési mappát
 	$opendir =opendir($upload_dir);
@@ -54,44 +49,30 @@ if ($error_dir==0) {
 
 					//a képek szélessége
 					if ($imgsize[0] > 100){
-						$base_img = "<img id=\"kepek\" src=\"$upload_dir$file\">";
+						$base_img = "<img class=\"kepek\" src=\"$upload_dir$file\">";
 					}else{
-						$base_img = "<img id=\"kepek_kicsi\" src=\"$upload_dir$file\">";
+						$base_img = "<img class=\"kepek_kicsi\" src=\"$upload_dir$file\">";
 					}
 				
 					//A kilistázó megjelenítése
 					if ($image_data_list == "yes") {
-						$all_stuff =  "<td class=\"data_yes\">Fájlnév: $file<hr>
-										<p class=\"center\">
+						$all_stuff =  "<p class=\"data_yes\">
 										<a href=\"$upload_dir$file\" target=\"_blank\">
 										$base_img</a>
-										</p>
-										<p class=\"left\">
-										Méret: $show_filesize
-										<br>Felbontás: $imgsize[0]x$imgsize[1]px
-										<br>Dátum: $last_modified
+										&nbsp;&nbsp;Fájlnév: $file<br>
+										&nbsp;&nbsp;Méret: $show_filesize<br>
+										&nbsp;&nbsp;Felbontás: $imgsize[0]x$imgsize[1]px<br>
+										&nbsp;&nbsp;Dátum: $last_modified
 										</p>";
 					}else{
-						$all_stuff =  "<td class=\"data_no\"><a href=\"$upload_dir$file\" target=\"_blank\">
-										$base_img</a>";
+						$all_stuff =  "<p class=\"data_no\"><a href=\"$upload_dir$file\" target=\"_blank\">$base_img</a>&nbsp;</p>";
 					}
-				
-					//Kiírjuk az adatokat
-					if (is_int($i / $cols)){
-						echo "$all_stuff</td></tr><tr>";
-					}else{
-					//a következő sorok adataid is ...
-						echo "$all_stuff</td>";
-					}
-					//és a felesleges sorokat elvesszük.
-						$i++;
+					echo "\n\t\t\t\t $all_stuff";
 			}
 		}
 	}//bezárjuk a mappát.
 	closedir($opendir);
 	clearstatcache();
-	// kiírjuk a tábla tartalmát
-	echo "</tr>
-			</table>";
+	echo "\n\t\t\t</div>\n";
 }
 ?>
