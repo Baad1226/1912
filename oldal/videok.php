@@ -7,7 +7,7 @@
 <br>
 <h3>Beágyazott FTP-ről</h3>
 <div class="videok">
-	<video width="352" height="288" poster="./kepek/logo.png" id="player" playsinline controls>
+	<video width="426" height="240" poster="./kepek/logo.png" id="player" playsinline controls>
 		<source src="./videok/bekescsaba.mp4" type="video/mp4">		
 	</video>
 </div>
